@@ -1,4 +1,4 @@
-package com.omdeep.kotlinmvvmproject
+package com.omdeep.kotlinmvvmproject.coroutines
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,17 +6,19 @@ import android.util.Log
 import android.view.View
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textview.MaterialTextView
+import com.omdeep.kotlinmvvmproject.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    lateinit var btnDownload : MaterialButton
-    lateinit var btnClick : MaterialButton
-    lateinit var downloadResult : MaterialTextView
-    lateinit var clickResult : MaterialTextView
-    var count : Int = 0
+    //TODO: Coroutine demo without using any viewBinding or DataBinding: -
+    private lateinit var btnDownload : MaterialButton
+    private lateinit var btnClick : MaterialButton
+    private lateinit var downloadResult : MaterialTextView
+    private lateinit var clickResult : MaterialTextView
+    private var count : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
