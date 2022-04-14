@@ -15,12 +15,19 @@ class CoroutineViewBindingActivity : AppCompatActivity(), View.OnClickListener {
     //TODO: Binding used in Kotlin language
     private lateinit var binding : ActivityCoroutineViewBindingBinding
     private var count : Int = 0
+    val myTag = "MyTag"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCoroutineViewBindingBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        //TODO: First method for giving root to setContentView
+//        val view = binding.root
+//        setContentView(view)
+
+        //TODO: Second method for giving root to setContentView
+        setContentView(binding.root)
+
+
 
         binding.btnDownload.setOnClickListener(this)
         binding.btnClick.setOnClickListener(this)

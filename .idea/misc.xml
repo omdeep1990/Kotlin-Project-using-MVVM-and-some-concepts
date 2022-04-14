@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Omdeep Singh/AndroidStudioProjects/KotlinMVVMProject/app/src/main/res/layout/activity_coroutine_demo.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/Omdeep Singh/AndroidStudioProjects/KotlinMVVMProject/app/src/main/res/layout/activity_coroutine_using_view_binding.xml" value="0.2" />
         <entry key="..\:/Users/Omdeep Singh/AndroidStudioProjects/KotlinMVVMProject/app/src/main/res/layout/activity_coroutine_view_binding.xml" value="0.2" />
         <entry key="..\:/Users/Omdeep Singh/AndroidStudioProjects/KotlinMVVMProject/app/src/main/res/layout/activity_main.xml" value="0.33" />
