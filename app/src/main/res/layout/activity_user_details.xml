@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="userViewModel"
+    type="com.omdeep.kotlinmvvmproject.roomDb.viewModel.UserDetailsViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:cardBackgroundColor="@color/card_color"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="40dp"
+        tools:context=".roomDb.view.UserDetailsActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profile_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="150dp"
+                android:src="@drawable/profile"
+                android:layout_height="150dp" />
+
+            <!--<com.google.android.material.card.MaterialCardView-->
+            <!--    app:layout_constraintTop_toTopOf="parent"-->
+            <!--    app:layout_constraintRight_toRightOf="parent"-->
+            <!--    android:layout_width="wrap_content"-->
+            <!--    android:layout_height="wrap_content">-->
+            <com.google.android.material.textfield.TextInputLayout
+
+                app:layout_constraintTop_toBottomOf="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:counterTextColor="@color/purple_200"
+                app:endIconMode="clear_text"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/layout_first_Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/first_Name"
+                    android:hint="Enterv Your First Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintTop_toBottomOf="@+id/layout_first_Name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:counterTextColor="@color/purple_200"
+                app:endIconMode="clear_text"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/layout_last_Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/last_Name"
+                    android:hint="Enter Your Last Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_first_Name"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintTop_toBottomOf="@+id/layout_last_Name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:counterTextColor="@color/purple_200"
+                app:endIconMode="clear_text"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/layout_mobile_No">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobile_Number"
+                    android:hint="Enter Your Mobile Number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_last_Name"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancel_btn"
+                android:text="@{userViewModel.saveOrUpdate}"
+                android:textSize="20dp"
+                app:cornerRadius="30dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="190dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/layout_mobile_No" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submit_btn"
+                android:text="@{userViewModel.clerAllOrDelete}"
+                android:textSize="20dp"
+                app:cornerRadius="30dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/layout_mobile_No"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <!--</com.google.android.material.card.MaterialCardView>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
