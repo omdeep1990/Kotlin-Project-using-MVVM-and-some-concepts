@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<variable
-    name="userViewModel"
-    type="com.omdeep.kotlinmvvmproject.roomDb.viewModel.UserDetailsViewModel" />
+    <variable
+       name="userViewModel"
+       type="com.omdeep.kotlinmvvmproject.roomDb.viewModel.UserDetailsViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -48,8 +48,8 @@
                 app:counterTextColor="@color/purple_200"
                 app:endIconMode="clear_text"
                 android:layout_centerInParent="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:id="@+id/layout_first_Name">
 
@@ -73,8 +73,8 @@
                 app:counterTextColor="@color/purple_200"
                 app:endIconMode="clear_text"
                 android:layout_centerInParent="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
                 android:id="@+id/layout_last_Name">
 
@@ -101,8 +101,8 @@
                 app:counterTextColor="@color/purple_200"
                 app:endIconMode="clear_text"
                 android:layout_centerInParent="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
                 android:id="@+id/layout_mobile_No">
 
@@ -119,9 +119,9 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel_btn"
                 android:text="@{userViewModel.saveOrUpdate}"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 app:cornerRadius="30dp"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginEnd="190dp"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
@@ -131,10 +131,10 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/submit_btn"
                 android:text="@{userViewModel.clerAllOrDelete}"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 app:cornerRadius="30dp"
                 android:layout_marginStart="200dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

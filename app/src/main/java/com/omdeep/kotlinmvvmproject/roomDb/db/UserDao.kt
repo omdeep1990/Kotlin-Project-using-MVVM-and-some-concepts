@@ -5,6 +5,7 @@ import androidx.room.*
 
 @Dao
 interface UserDao {
+    //TODO: All CRUD operations used here
     @Insert
     suspend fun insertUser(user: User) : Long
 

@@ -24,7 +24,9 @@ class UserDetailsActivity : AppCompatActivity() {
         val factory = UserDetailsViewModelFactory(userRepository)
         val userViewModel = ViewModelProvider(this, factory)[UserDetailsViewModel::class.java]
 
+        //TODO: binding.userViewModel is the variable defined in its xml layout file
         binding.userViewModel = userViewModel
+        //TODO: Giving lifecycle owner to layout file
         binding.lifecycleOwner = this
     }
 }

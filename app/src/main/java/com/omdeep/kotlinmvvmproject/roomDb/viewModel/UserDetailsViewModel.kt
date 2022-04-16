@@ -14,6 +14,7 @@ class UserDetailsViewModel(val userRepository: UserRepository) : ViewModel() {
     var saveOrUpdate = MutableLiveData<String>()
     var clerAllOrDelete = MutableLiveData<String>()
 
+    //TODO: Initializing values to any button or text view at first time
     init {
         //TODO: Setting value to Mutable Live Data
         saveOrUpdate.value = "SAVE"

@@ -3,7 +3,7 @@ package com.omdeep.kotlinmvvmproject.roomDb.repository
 import com.omdeep.kotlinmvvmproject.roomDb.db.User
 import com.omdeep.kotlinmvvmproject.roomDb.db.UserDao
 
-//TODO: Create constructor of UserDao here and call all the methods of UserDao here
+//TODO: Create constructor of Interface UserDao here and call all the methods of UserDao here
 class UserRepository(val dao : UserDao) {
 
     //TODO: Insert function called
