@@ -136,8 +136,8 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/submit_btn"
-                android:text="@{userViewModel.clerAllOrDelete}"
-                android:onClick="@{() -> userViewModel.clearOrDeleteAll()}"
+                android:text="@{userViewModel.clearAllOrDelete}"
+                android:onClick="@{() -> userViewModel.clearAllOrDelete()}"
                 android:textSize="20sp"
                 app:cornerRadius="30dp"
                 android:layout_marginStart="190dp"

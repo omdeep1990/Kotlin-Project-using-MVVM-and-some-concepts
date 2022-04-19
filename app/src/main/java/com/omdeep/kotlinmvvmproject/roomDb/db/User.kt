@@ -11,12 +11,12 @@ data class User (
     val id : Int,
 
     @ColumnInfo(name = "fName")
-    val firstName : String,
+    var firstName : String,
 
     @ColumnInfo(name = "lName")
-    val lastName : String,
+    var lastName : String,
 
     @ColumnInfo(name = "phone")
-    val mobileNo : String
+    var mobileNo : String
 
 )

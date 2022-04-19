@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.omdeep.kotlinmvvmproject.databinding.ListItemsBinding
 import com.omdeep.kotlinmvvmproject.roomDb.db.User
 
-class MyRecyclerViewAdapter(private val userList : List<User>) : RecyclerView.Adapter<MyViewHolder>() {
+class MyRecyclerViewAdapter(private val userList : List<User>, var selectedItem:(User) -> Unit) : RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ListItemsBinding.inflate(layoutInflater, parent, false)
@@ -14,7 +14,7 @@ class MyRecyclerViewAdapter(private val userList : List<User>) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(userList[position])
+        holder.bind(userList[position], selectedItem)
     }
 
     override fun getItemCount(): Int {
@@ -23,8 +23,11 @@ class MyRecyclerViewAdapter(private val userList : List<User>) : RecyclerView.Ad
 }
 
 class MyViewHolder(private val binding : ListItemsBinding) : RecyclerView.ViewHolder(binding.root){
-    fun bind(user: User){
+    fun bind(user: User, selectedItem: (User) -> Unit){
         binding.yourName.text = user.firstName+" "+user.lastName
         binding.mobileNumber.text = user.mobileNo
+        binding.rootItem.setOnClickListener {
+            selectedItem(user)
+        }
     }
 }

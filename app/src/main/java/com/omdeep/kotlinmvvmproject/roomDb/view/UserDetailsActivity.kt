@@ -2,6 +2,7 @@ package com.omdeep.kotlinmvvmproject.roomDb.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.omdeep.kotlinmvvmproject.R
 import com.omdeep.kotlinmvvmproject.databinding.ActivityUserDetailsBinding
 import com.omdeep.kotlinmvvmproject.roomDb.adapter.MyRecyclerViewAdapter
+import com.omdeep.kotlinmvvmproject.roomDb.db.User
 import com.omdeep.kotlinmvvmproject.roomDb.db.UserDatabase
 import com.omdeep.kotlinmvvmproject.roomDb.factory.UserDetailsViewModelFactory
 import com.omdeep.kotlinmvvmproject.roomDb.repository.UserRepository
@@ -40,7 +42,18 @@ class UserDetailsActivity : AppCompatActivity() {
 
     fun displayUsersList() {
         userViewModel.userList.observe(this, Observer {
-            binding.recyclerView.adapter = MyRecyclerViewAdapter(it)
+            binding.recyclerView.adapter = MyRecyclerViewAdapter(it) { selectedItem: User ->
+                onItemClickListener(
+                    selectedItem
+                )
+            }
         })
+    }
+
+    private fun onItemClickListener(user : User) {
+        Toast.makeText(this, "Selected name is ${user.firstName+" " +
+        user.lastName}", Toast.LENGTH_SHORT).show()
+
+        userViewModel.updateOrDeleteClick(user)
     }
 }
